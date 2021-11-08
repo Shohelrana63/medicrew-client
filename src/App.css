@@ -13,4 +13,6 @@ body {
 	text-transform: uppercase;
 	font-weight: 700;
 }
-
+.heading-text{
+	color: #1cc7c1 !important;
+}
