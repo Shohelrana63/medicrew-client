@@ -1,15 +1,25 @@
-.appointment-btn{
+.button-style{
     padding: 12px 18px; 
+	color: #fff;
 }
 
 .banner-img img{
     width:100%;
 }
-.banner-section h1 {
-	font-size: 40px;
+
+.banner-section h1.banner-title {
+	font-size: 48px;
 	color: #1f2d53;
 }
-
+.banner-title{
+	font-weight: 700;
+	color: #1f2d53;
+}
 .banner-section p {
+	font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+    margin-bottom: 0;
 	color: rgba(0, 0, 0, 0.7);
+	font-weight: 450
 }
