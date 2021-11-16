@@ -4,6 +4,7 @@ import Department from '../../Components/Department/Department';
 import Doctors from '../../Components/Doctors/Doctors';
 import Info from '../../Components/Info/Info';
 import Navbar from '../../Components/Navbar/Navbar';
+import Testimonials from '../../Components/Testimonials/Testimonials';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Info />
             <Department />
             <Doctors />
+            <Testimonials />
         </div>
     );
 };
