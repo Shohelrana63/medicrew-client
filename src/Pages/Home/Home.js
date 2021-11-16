@@ -4,6 +4,7 @@ import Department from '../../Components/Department/Department';
 import Doctors from '../../Components/Doctors/Doctors';
 import Info from '../../Components/Info/Info';
 import Navbar from '../../Components/Navbar/Navbar';
+import SpecialDoctor from '../../Components/SpecialDoctor/SpecialDoctor';
 import Testimonials from '../../Components/Testimonials/Testimonials';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <Department />
             <Doctors />
             <Testimonials />
+            <SpecialDoctor />
         </div>
     );
 };
