@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
 import'./Appointment.css';
@@ -19,7 +18,12 @@ Modal.setAppElement('#root');
 
 const AppointmentForm = ({modalIsOpen,closeModal, category, name,date}) => {
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data =>{
+		console.log(data);
+		closeModal();
+		alert("Appointment Request Sent! Please go to Dashboard and Login with your email which you provided into booking appointment to view details.");
+	}
+	 
     return (
         <div>
             <Modal
