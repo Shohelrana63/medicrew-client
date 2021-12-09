@@ -3,8 +3,10 @@ import Home from './Pages/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Appointment from './Pages/Appointment';
 import Reviews from './Pages/Reviews';
+import Login from './Pages/Authentication/Login';
 
 function App() {
+
   return (
     <Router>
       <Switch>
@@ -16,6 +18,9 @@ function App() {
         </Route>
         <Route path="/reviews">
           <Reviews/>
+        </Route>
+        <Route path="/dashboard">
+          <Login/>
         </Route>
       </Switch>
     </Router>

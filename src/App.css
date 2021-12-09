@@ -1,23 +1,24 @@
 html,
 body {
-	scroll-behavior: smooth;
-	font-family: 'Poppins', sans-serif;
-	height: 100%;
-	background-color: rgb(232, 246, 255);
-	/* background-color: rgb(67, 210, 249); */
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  height: 100%;
+  background-color: rgb(232, 246, 255);
+  /* background-color: rgb(67, 210, 249); */
 }
 
-.btn-style{
-	background-image: linear-gradient(75deg, #19d3ae, #0fcfec);
-	border-color: transparent !important;
-	text-transform: uppercase;
-	font-weight: 700;
+.btn-style {
+  background-image: linear-gradient(75deg, #19d3ae, #0fcfec);
+  border-color: transparent !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
 }
 
-.heading-text{
-	color: #1cc7c1 !important;
-	font-weight: 700;
+.heading-text {
+  color: #1cc7c1 !important;
+  font-weight: 700;
 }
 .text-primary {
-	color: #1cc7c1 !important;
+  color: #1cc7c1 !important;
 }
