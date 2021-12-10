@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './firebase.config';
@@ -6,11 +6,14 @@ import './Login.css';
 import SignUpForm from './SignUpForm';
 import LoginForm from './LoginForm';
 import OthersLogin from './OthersLogin';
-import { Link} from 'react-router-dom';
+import { Link, useHistory, useLocation} from 'react-router-dom';
 import LoginImg from '../../Images/loginImg/loginBg.png';
+import { DataContext } from '../../App';
 
 const Login = () => {
+	
     const [ newUser, setNewUser ] = useState(false);
+	const { loggedInUser, setLoggedInUser } = useContext(DataContext);
     const [ currentUser, setCurrentUser ] = useState({
 		isSignedIn: false,
 		name: '',
@@ -19,11 +22,16 @@ const Login = () => {
 		error: '',
 		success: false
 	});
-    const handleFormToggle = () => {
+    
+	const history = useHistory();
+	const location = useLocation();
+	const { from } = location.state || { from: { pathname: "/" } };
+    
+	const handleFormToggle = () => {
 		setNewUser(!newUser);
 	};
-
-    // Initialize Firebase
+	
+	// Initialize Firebase
 	if (!firebase.apps.length) {
 		firebase.initializeApp(firebaseConfig);
 	}
@@ -44,12 +52,15 @@ const Login = () => {
 					photoURL: photoURL,
 				};
 				setCurrentUser(newUser);
+				setLoggedInUser(newUser);
+				history.replace(from);
 				console.log(newUser);
 			})
 			.catch(function(error) {
 				const newUser = { ...currentUser };
 				newUser.error = error.message;
 				newUser.success = false;
+				setLoggedInUser(newUser);
 				console.log(error);
 			});
 	};
@@ -147,11 +158,14 @@ const Login = () => {
 						error: ''
 					};
 					setCurrentUser(newUser);
+					setLoggedInUser(newUser);
+					history.replace(from);
 				})
 				.catch((error) => {
 					const newUser = { ...currentUser };
 					newUser.error = error.message;
 					newUser.success = false;
+					setLoggedInUser(newUser);
 					console.log(error.message);
 				});
 		}
@@ -180,11 +194,14 @@ const Login = () => {
 					};
 					setCurrentUser(newUser);
 					console.log(result.user);
+					setLoggedInUser(newUser);
+					history.replace(from);
 				})
 				.catch((error) => {
 					const newUser = { ...currentUser };
 					newUser.error = error.message;
 					newUser.success = false;
+					setLoggedInUser(newUser);
 				});
 		}
 	};
