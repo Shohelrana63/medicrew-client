@@ -230,6 +230,11 @@ const Login = () => {
 									User {!newUser ? 'logged in' : 'registered'} successfully
 								</div>
 							)}
+							{loggedInUser.error && (
+								<div className="alert alert-danger" role="alert">
+									{loggedInUser.error}
+								</div>
+							)}
 						</div>
 
 						{newUser ? (

@@ -5,12 +5,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Appointment from './Pages/Appointment';
 import Reviews from './Pages/Reviews';
 import Login from './Pages/Authentication/Login';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import PrivateRoute from './Pages/Authentication/PrivateRoute';
 
 export const DataContext = createContext();
 
 function App() {
-  const[loggendInUser, setLoggedInUser] = useState({});
-  const contextData={loggendInUser, setLoggedInUser};
+  const[loggedInUser, setLoggedInUser] = useState({});
+  const contextData={loggedInUser, setLoggedInUser};
 
   return (
     <DataContext.Provider value={contextData}>
@@ -25,9 +27,12 @@ function App() {
             <Route path="/reviews">
               <Reviews/>
             </Route>
-            <Route path="/dashboard">
+            <Route exact path="/dashboard">
               <Login/>
             </Route>
+            <PrivateRoute path="/dashboard/dashboard">
+               <Dashboard />
+            </PrivateRoute>
           </Switch>
         </Router>
     </DataContext.Provider>

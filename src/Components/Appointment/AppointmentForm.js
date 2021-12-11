@@ -16,12 +16,31 @@ const customStyles = {
   
 Modal.setAppElement('#root');
 
-const AppointmentForm = ({modalIsOpen,closeModal, category, name,date}) => {
+const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn, category, name,date}) => {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data =>{
 		console.log(data);
-		closeModal();
-		alert("Appointment Request Sent! Please go to Dashboard and Login with your email which you provided into booking appointment to view details.");
+		// alert("Appointment Request Sent!");
+		// 		closeModal();
+		data.service = appointmentOn;
+		data.date = date;
+		data.created = new Date();
+
+		fetch('http://localhost:8000/addAppointment',{
+			method: 'POST',
+			headers:{'content-type': 'application/json' },
+			body: JSON.stringify(data)
+		})
+			.then(res => res.json())
+			.then(success =>{
+				if(success){
+					closeModal();
+					alert("Appointment created successfully.");
+					
+				}
+			})
+		
+		
 	}
 	 
     return (
