@@ -26,7 +26,7 @@ const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn, category, name,d
 		data.date = date;
 		data.created = new Date();
 
-		fetch('http://localhost:8000/addAppointment',{
+		fetch('http://localhost:8000/addAppointment', {
 			method: 'POST',
 			headers:{'content-type': 'application/json' },
 			body: JSON.stringify(data)
