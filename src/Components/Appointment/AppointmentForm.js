@@ -39,8 +39,6 @@ const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn, category, name,d
 					
 				}
 			})
-		
-		
 	}
 	 
     return (

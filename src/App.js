@@ -9,6 +9,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import PrivateRoute from './Pages/Authentication/PrivateRoute';
 import PatientAppointment from './Pages/Dashboard/PatientAppointment';
 import Patients from './Components/Dashboard/Patients';
+import AddDoctor from './Pages/Dashboard/AddDoctor';
 
 export const DataContext = createContext();
 
@@ -26,7 +27,7 @@ function App() {
 		},
 		[ allBookedAppointments.length ]
 	);
-  console.log("appointment",allBookedAppointments);
+  // console.log("appointment",allBookedAppointments);
 
   const contextData={
     loggedInUser, setLoggedInUser,
@@ -56,7 +57,10 @@ function App() {
 							<PatientAppointment />
 						</Route>
             <Route path="/dashboard/patients">
-            <Patients />
+             <Patients />
+						</Route>
+            <Route path="/dashboard/doctors">
+              <AddDoctor/>
 						</Route>
           </Switch>
         </Router>
