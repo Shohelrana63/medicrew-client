@@ -16,7 +16,7 @@ export const DataContext = createContext();
 function App() {
   const[loggedInUser, setLoggedInUser] = useState({});
   const [ allBookedAppointments, setAllBookedAppointments ] = useState([]);
-  
+  const [ allDoctors, setAllDoctors ] = useState([]);
   
   useEffect(
 		() => {
@@ -28,10 +28,23 @@ function App() {
 		[ allBookedAppointments.length ]
 	);
   // console.log("appointment",allBookedAppointments);
+  // Load all Doctors Information
+	useEffect(
+		() => {
+			fetch('http://localhost:8000/doctors')
+				.then((res) => res.json())
+				.then((data) => {
+          setAllDoctors(data);
+			});
+		},
+		[ allDoctors.length ]
+	);
+console.log("allAppointments",allDoctors);
 
   const contextData={
     loggedInUser, setLoggedInUser,
-    allBookedAppointments,setAllBookedAppointments
+    allBookedAppointments,setAllBookedAppointments,
+    allDoctors, setAllDoctors 
   };
 
   return (

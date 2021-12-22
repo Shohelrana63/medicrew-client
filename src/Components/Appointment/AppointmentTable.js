@@ -1,9 +1,12 @@
-import React from 'react';
-import doctors from '../../Data/doctors';
+import React, { useContext } from 'react';
+import { DataContext } from '../../App';
+// import doctors from '../../Data/doctors';
 import AppointmentCard from './AppointmentCard';
 
 const AppointmentTable = ({date}) => {
-    const doctorsData = doctors;
+    // const doctorsData = doctors;
+    const contextDoctor = useContext(DataContext);
+    console.log("contextDoctor",contextDoctor)
     
     return (
         <div className="appointments container mt-5">
@@ -12,7 +15,7 @@ const AppointmentTable = ({date}) => {
 			</h3>
             <div className="row">
                 { 
-                        doctorsData && doctorsData.map((doctorsData) => 
+                       contextDoctor.allDoctors.map((doctorsData) => 
                         <AppointmentCard key={doctorsData.id} date={date} doctorsData={doctorsData}/>
                         )
                     }
