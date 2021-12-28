@@ -17,7 +17,16 @@ function App() {
   const[loggedInUser, setLoggedInUser] = useState({});
   const [ allBookedAppointments, setAllBookedAppointments ] = useState([]);
   const [ allDoctors, setAllDoctors ] = useState([]);
-  
+  const[admin, setAdmin] = useState({
+    email: 'ad@gmail.com',
+    password: 'ad12345'
+  });
+  const[formAdmin, setFormAdmin] = useState({
+    email:"",
+    password:"",
+  });
+  const[userType, setUserType] = useState("");
+
   useEffect(
 		() => {
 			fetch('http://localhost:8000/bookedAppointments')
@@ -44,7 +53,10 @@ console.log("allAppointments",allDoctors);
   const contextData={
     loggedInUser, setLoggedInUser,
     allBookedAppointments,setAllBookedAppointments,
-    allDoctors, setAllDoctors 
+    allDoctors, setAllDoctors ,
+    admin, setAdmin,
+    formAdmin, setFormAdmin,
+    userType, setUserType
   };
 
   return (
@@ -63,18 +75,18 @@ console.log("allAppointments",allDoctors);
             <Route exact path="/dashboard">
               <Login/>
             </Route>
-            {/* <PrivateRoute path="/dashboard/dashboard">
+            <PrivateRoute path="/dashboard/dashboard">
                <Dashboard />
-            </PrivateRoute> */}
-            <Route path="/dashboard/my-appointment">
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard/my-appointment">
 							<PatientAppointment />
-						</Route>
-            <Route path="/dashboard/patients">
+						</PrivateRoute>
+            <PrivateRoute path="/dashboard/patients">
              <Patients />
-						</Route>
-            <Route path="/dashboard/doctors">
+						</PrivateRoute>
+            <PrivateRoute path="/dashboard/doctors">
               <AddDoctor/>
-						</Route>
+						</PrivateRoute>
           </Switch>
         </Router>
     </DataContext.Provider>

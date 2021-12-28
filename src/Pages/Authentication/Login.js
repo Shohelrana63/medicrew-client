@@ -13,7 +13,7 @@ import { DataContext } from '../../App';
 const Login = () => {
 	
     const [ newUser, setNewUser ] = useState(false);
-	const { loggedInUser, setLoggedInUser } = useContext(DataContext);
+	const { loggedInUser, setLoggedInUser,admin, setAdmin, formAdmin, setFormAdmin, userType, setUserType } = useContext(DataContext);
     const [ currentUser, setCurrentUser ] = useState({
 		isSignedIn: false,
 		name: '',
@@ -89,6 +89,7 @@ const Login = () => {
 		}
 
 		if (e.target.name === 'email') {
+			formAdmin[e.target.name] = e.target.value;
 			isFieldValid = /\S+@\S+/.test(e.target.value);
 			if (!isFieldValid) {
 				newError[e.target.name] = 'Email is not valid';
@@ -106,6 +107,7 @@ const Login = () => {
 			isFieldValid = isPasswordLengthValid && passwordHasNumber;
 
 			if (e.target.name === 'password') {
+				formAdmin[e.target.name] = e.target.value;
 				pass1 = e.target.value;
 				if (!isFieldValid) {
 					newError[e.target.name] = 'Password is not valid';
@@ -173,37 +175,47 @@ const Login = () => {
 
     // SIGN IN with email and password
 	const handleSignIn = (e) => {
+		console.log(formAdmin)
+		console.log(admin)
+		console.log(formAdmin.email  === admin.email && formAdmin.password === admin.password)
 		e.preventDefault();
-		if (!currentUser.email && !currentUser.password) {
-			const newError = { ...errors };
-			newError.email = 'Please use valid email!';
-			newError.password = 'Please use valid password!';
-			setErrors(newError);
-		} else {
-			firebase
-				.auth()
-				.signInWithEmailAndPassword(currentUser.email, currentUser.password)
-				.then((result) => {
-					const { displayName, email } = result.user;
-					const newUser = {
-						isSignedIn: true,
-						email: email,
-						name: displayName,
-						success: true,
-						error: ''
-					};
-					setCurrentUser(newUser);
-					console.log(result.user);
-					setLoggedInUser(newUser);
-					history.replace(from);
-				})
-				.catch((error) => {
-					const newUser = { ...currentUser };
-					newUser.error = error.message;
-					newUser.success = false;
-					setLoggedInUser(newUser);
-				});
+		if(formAdmin.email  === admin.email && formAdmin.password === admin.password){
+			setUserType("admin");
+			setLoggedInUser(admin);
+			history.replace(from);
+		}else{
+			if (!currentUser.email && !currentUser.password) {
+				const newError = { ...errors };
+				newError.email = 'Please use valid email!';
+				newError.password = 'Please use valid password!';
+				setErrors(newError);
+			} else {
+				firebase
+					.auth()
+					.signInWithEmailAndPassword(currentUser.email, currentUser.password)
+					.then((result) => {
+						const { displayName, email } = result.user;
+						const newUser = {
+							isSignedIn: true,
+							email: email,
+							name: displayName,
+							success: true,
+							error: ''
+						};
+						setCurrentUser(newUser);
+						console.log(result.user);
+						setLoggedInUser(newUser);
+						history.replace(from);
+					})
+					.catch((error) => {
+						const newUser = { ...currentUser };
+						newUser.error = error.message;
+						newUser.success = false;
+						setLoggedInUser(newUser);
+					});
+			}
 		}
+		
 	};
 
     const resetPassword = (email) => {

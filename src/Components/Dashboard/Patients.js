@@ -6,7 +6,8 @@ const Patients = () => {
     return (
         <div className="container-fluid row">
             <Sidebar/>
-            <div id="responsive-dashboard" className="col-md-10 p-4 pr-5" style={{ position: 'absolute', right: 0, backgroundColor: '#F4FDFB' }}>
+            <div id="responsive-dashboard" className="col-md-10 p-4 pr-5"
+             style={{right: "10px", backgroundColor: '#F4FDFB' }}>
 				<h5 className="mb-5">Patients</h5>
 					<PatientsDataTable />
 			</div>

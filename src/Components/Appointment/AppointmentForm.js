@@ -20,8 +20,6 @@ const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn, category, name,d
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data =>{
 		console.log(data);
-		// alert("Appointment Request Sent!");
-		// 		closeModal();
 		data.service = appointmentOn;
 		data.date = date;
 		data.created = new Date();
@@ -31,12 +29,12 @@ const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn, category, name,d
 			headers:{'content-type': 'application/json' },
 			body: JSON.stringify(data)
 		})
-			.then(res => res.json())
+			// .then(res => console.log(res.json()))
 			.then(success =>{
+				console.log(success)
 				if(success){
-					closeModal();
 					alert("Appointment created successfully.");
-					
+					closeModal();
 				}
 			})
 	}
@@ -76,6 +74,15 @@ const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn, category, name,d
 										className="form-control"
 									/>
 									{errors.phone && <span className="text-danger">Phone Number is required</span>}
+								</div>
+								<div className="form-group">
+									<input
+										type="text"
+										ref={register({ required: true })}
+										value={name}
+										name="doctor"
+										className="form-control"
+									/>
 								</div>
 								<div className="form-group">
 									<input

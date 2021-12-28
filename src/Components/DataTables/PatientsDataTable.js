@@ -34,6 +34,9 @@ const PatientsDataTable = () => {
 						Problem
 					</th>
 					<th className="text-secondary" scope="col">
+						Doctor
+					</th>
+					<th className="text-secondary" scope="col">
 						Action
 					</th>
 				</tr>
@@ -49,6 +52,7 @@ const PatientsDataTable = () => {
 						<td>{patient.phone}</td>
 						<td>{patient.email}</td>
                         <td>{patient.problem}</td>
+                        <td>{patient.doctor}</td>
 						<td>
 							<button className="btn btn-primary">
 								<a
