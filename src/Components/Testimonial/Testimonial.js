@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Testimonial = (props) => {
-    const { description, name, from, img } = props.testimonials;
+    const { name, from, img ,quote } = props.reviews;
     return (
         <div className="card-deck mt-4 mb-5">
             <div className="card shadow-sm">
                 <div class="card-body">
-                    <p class="card-text">{description}</p>
+                    <p class="card-text">{quote}</p>
                 </div>
                 <div className="card-footer d-flex  align-items-center">
                     <img className="mx-3" src={img} alt="patient" width="60" style={{ borderRadius: '50%' }} />

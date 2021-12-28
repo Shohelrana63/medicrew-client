@@ -10,6 +10,7 @@ import PrivateRoute from './Pages/Authentication/PrivateRoute';
 import PatientAppointment from './Pages/Dashboard/PatientAppointment';
 import Patients from './Components/Dashboard/Patients';
 import AddDoctor from './Pages/Dashboard/AddDoctor';
+import AddReview from './Pages/Dashboard/AddReview';
 
 export const DataContext = createContext();
 
@@ -86,6 +87,9 @@ console.log("allAppointments",allDoctors);
 						</PrivateRoute>
             <PrivateRoute path="/dashboard/doctors">
               <AddDoctor/>
+						</PrivateRoute>
+            <PrivateRoute path="/dashboard/reviews">
+              <AddReview/>
 						</PrivateRoute>
           </Switch>
         </Router>
