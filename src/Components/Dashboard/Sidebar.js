@@ -49,11 +49,11 @@ const Sidebar = () => {
 								<FontAwesomeIcon icon={faUsers} /> <span>Patients</span>
 							</Link>
 						</li>
-						{/* <li>
+						<li>
 							<Link to="/dashboard/prescriptions" className="text-white">
 								<FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span>
 							</Link>
-						</li> */}
+						</li>
 						<li>
 							<Link to="/dashboard/doctors" className="text-white">
 								<FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span>

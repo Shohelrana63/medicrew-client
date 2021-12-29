@@ -29,3 +29,12 @@ body {
 /* .doctorForm textarea {
   border: none;
 } */
+@media (max-width: 800px) {
+  #modal-responsive {
+    width: 90% !important;
+  }
+
+  #responsive-dashboard {
+    margin-top: 450px;
+  }
+}

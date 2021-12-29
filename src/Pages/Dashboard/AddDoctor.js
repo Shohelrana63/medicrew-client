@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import Sidebar from '../../Components/Dashboard/Sidebar';
 
 const AddDoctor = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+    }, []);
+	
     const [ info, setInfo ] = useState({});
 	const [ file, setFile ] = useState(null);
 
@@ -45,7 +50,7 @@ const AddDoctor = () => {
         <section className="container-fluid row" style={{ backgroundColor: '#F4FDFB' }}>
 			<Sidebar />
 			<div id="responsive-dashboard" className="col-md-10 p-4 doctorForm"
-             style={{ right: 0, backgroundColor: '#F4FDFB' }}>
+             style={{position:"absolute", right: 0, backgroundColor: '#F4FDFB' }}>
 				<h5 className="text-brand mb-4">Add a Doctor</h5>
 				<form onSubmit={handleSubmit}>
 					<div className="form-group col-6">

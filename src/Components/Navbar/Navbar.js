@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from "../../Images/mainlogo/logoOne.png";
 
 const Navbar = () => {
     return (
@@ -7,7 +8,8 @@ const Navbar = () => {
             <nav className="navbar navbar-expand-lg navbar-light py-3">
                 <div className="container">
                     <Link className="navbar-brand" to="/">
-                        <h1 style={{ color: "#1f2d53" }}>Medicrew</h1>
+                        {/* <h1 style={{ color: "#1f2d53" }}>Medicrew</h1> */}
+                        <img style={{width: "75%"}} src={logo} alt="" />
                     </Link>
                     <button className="navbar-toggler" type="button"
                         data-toggle="collapse"

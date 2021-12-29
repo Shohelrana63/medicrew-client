@@ -11,9 +11,11 @@ import PatientAppointment from './Pages/Dashboard/PatientAppointment';
 import Patients from './Components/Dashboard/Patients';
 import AddDoctor from './Pages/Dashboard/AddDoctor';
 import AddReview from './Pages/Dashboard/AddReview';
+import Prescription from './Pages/Dashboard/Prescription';
+import PatientPrescription from './Pages/Dashboard/PatientPrescription';
 
 export const DataContext = createContext();
-
+export const CalenderContext = createContext();
 function App() {
   const[loggedInUser, setLoggedInUser] = useState({});
   const [ allBookedAppointments, setAllBookedAppointments ] = useState([]);
@@ -27,7 +29,7 @@ function App() {
     password:"",
   });
   const[userType, setUserType] = useState("");
-
+  const [ date, setDate ] = useState(new Date());
   useEffect(
 		() => {
 			fetch('http://localhost:8000/bookedAppointments')
@@ -59,9 +61,11 @@ console.log("allAppointments",allDoctors);
     formAdmin, setFormAdmin,
     userType, setUserType
   };
+  const calenderContextValue = { date, setDate };
 
   return (
     <DataContext.Provider value={contextData}>
+      <CalenderContext.Provider value={calenderContextValue}>
         <Router>
           <Switch>
             <Route exact path="/">
@@ -88,11 +92,18 @@ console.log("allAppointments",allDoctors);
             <PrivateRoute path="/dashboard/doctors">
               <AddDoctor/>
 						</PrivateRoute>
+            <PrivateRoute path="/dashboard/prescriptions">
+							<Prescription />
+						</PrivateRoute>
+            <PrivateRoute path="/dashboard/my-prescriptions">
+							<PatientPrescription />
+						</PrivateRoute>
             <PrivateRoute path="/dashboard/reviews">
               <AddReview/>
 						</PrivateRoute>
           </Switch>
         </Router>
+        </CalenderContext.Provider>
     </DataContext.Provider>
   );
 }

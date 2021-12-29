@@ -2,10 +2,9 @@ import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import '../Doctors/Doctors.css';
-import AppointmentForm from './AppointmentForm';
 
-const AppointmentCard = ({doctorsData, date}) => {
-    const { id, img, category, name, education, designation, department, hospital } = doctorsData;
+const AppointmentCard = ({ data, modalController }) => {
+	const { id, img, category, name, education, designation, department, hospital } = data;
 	const [ descriptionCollapse, setDescriptionCollapse ] = useState(false);
 
 	const showMore = () => {
@@ -15,16 +14,9 @@ const AppointmentCard = ({doctorsData, date}) => {
 	const showLess = () => {
 		setDescriptionCollapse(false);
 	};
-    const [modalIsOpen, setIsOpen] = useState(false);
 
-	function openModal() {
-		setIsOpen(true);
-	}
-	function closeModal() {
-		setIsOpen(false);
-	}
-    return (
-        <div className="col-md-4 mb-5">
+	return (
+		<div className="col-md-4 mb-5">
 			<div className="single-doctor">
 				<img className="img-fluid doctor-image" src={img} alt="doctor" />
 				<div className="doctor-description">
@@ -48,24 +40,14 @@ const AppointmentCard = ({doctorsData, date}) => {
 					<h6 className="department">{department}</h6>
 					<h6 className="hospital">{hospital}</h6>
 					<div className="text-center">
-						<button className="btn btn-style button-style mt-3"
-                        //  onClick={() => modalController(id)}
-                        onClick={openModal}
-                         >
+						<button className="btn btn-style button-style mt-3" onClick={() => modalController(id)}>
 							<FontAwesomeIcon icon={faCalendarCheck} className="mr-3" /> Book Appointment
 						</button>
-                        <AppointmentForm 
-                        date={date}
-                        modalIsOpen={modalIsOpen}
-                        closeModal={closeModal}
-                        category={category}
-                        name={name}
-                        />
 					</div>
 				</div>
 			</div>
 		</div>
-    );
+	);
 };
 
 export default AppointmentCard;

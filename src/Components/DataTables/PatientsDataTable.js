@@ -30,12 +30,6 @@ const PatientsDataTable = () => {
 					<th className="text-secondary" scope="col">
 						Email
 					</th>
-                    <th className="text-secondary" scope="col">
-						Problem
-					</th>
-					<th className="text-secondary" scope="col">
-						Doctor
-					</th>
 					<th className="text-secondary" scope="col">
 						Action
 					</th>
@@ -45,14 +39,12 @@ const PatientsDataTable = () => {
 				{ContextData.allBookedAppointments.map((patient) => (
 					<tr>
 						<td>{srNo++}</td>
-						<td>{patient.name.substr(0, 16)}</td>
-						<td>{patient.gender}</td>
-						<td>{patient.age}</td>
-						<td>{patient.weight}KG</td>
-						<td>{patient.phone}</td>
-						<td>{patient.email}</td>
-                        <td>{patient.problem}</td>
-                        <td>{patient.doctor}</td>
+						<td>{patient.patientInfo.name.substr(0, 16)}</td>
+						<td>{patient.patientInfo.gender}</td>
+						<td>{patient.patientInfo.age}</td>
+						<td>{patient.patientInfo.weight}KG</td>
+						<td>{patient.patientInfo.phone}</td>
+						<td>{patient.patientInfo.email}</td>
 						<td>
 							<button className="btn btn-primary">
 								<a
@@ -65,7 +57,6 @@ const PatientsDataTable = () => {
 								</a>
 							</button>
 						</td>
-						
 					</tr>
 				))}
 			</tbody>
