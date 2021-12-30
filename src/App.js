@@ -13,6 +13,7 @@ import AddDoctor from './Pages/Dashboard/AddDoctor';
 import AddReview from './Pages/Dashboard/AddReview';
 import Prescription from './Pages/Dashboard/Prescription';
 import PatientPrescription from './Pages/Dashboard/PatientPrescription';
+import Payment from './Components/Payment/Payment';
 
 export const DataContext = createContext();
 export const CalenderContext = createContext();
@@ -101,6 +102,9 @@ console.log("allAppointments",allDoctors);
             <PrivateRoute path="/dashboard/reviews">
               <AddReview/>
 						</PrivateRoute>
+            <PrivateRoute path="/dashboard/payment">
+              <Payment/>
+            </PrivateRoute>
           </Switch>
         </Router>
         </CalenderContext.Provider>

@@ -78,6 +78,11 @@ const Sidebar = () => {
 							</Link>
 						</li>
 						<li>
+							<Link to="/dashboard/payment" className="text-white">
+								<FontAwesomeIcon icon={faGripHorizontal} /> <span>Payment</span>
+							</Link>
+						</li>
+						<li>
 							<Link to="/dashboard/reviews" className="text-white">
 								<FontAwesomeIcon icon={faQuoteLeft} /> <span>Add Review</span>
 							</Link>
