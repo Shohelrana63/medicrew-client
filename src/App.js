@@ -14,6 +14,7 @@ import AddReview from './Pages/Dashboard/AddReview';
 import Prescription from './Pages/Dashboard/Prescription';
 import PatientPrescription from './Pages/Dashboard/PatientPrescription';
 import Payment from './Components/Payment/Payment';
+import Contacts from './Pages/Contacts';
 
 export const DataContext = createContext();
 export const CalenderContext = createContext();
@@ -77,6 +78,9 @@ console.log("allAppointments",allDoctors);
             </Route>
             <Route path="/reviews">
               <Reviews/>
+            </Route>
+            <Route path="/contact">
+              <Contacts/>
             </Route>
             <Route exact path="/dashboard">
               <Login/>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../Dashboard/Sidebar';
-import bkash from "../../Images/paymentIcon/bkash1.png";
+import bkash from "../../Images/paymentIcon/bkash.png";
 import { useForm } from 'react-hook-form';
 import Modal from 'react-modal';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -34,7 +34,7 @@ const Payment = () => {
 				<div className="paymentForm">
                    <div className="col-md-6">
                        <h5 className="text-primary">Select Your Payment Method</h5>
-                       <img style={{width:"200px"}} onClick={modalController} src={bkash} alt="" />
+                       <img style={{width:"50%"}} onClick={modalController} src={bkash} alt="" />
                        <Modal
                             isOpen={modalIsOpen}
                             onRequestClose={() => setModalIsOpen(false)}
