@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../Images/mainlogo/logoOne.png";
+import covid from "../../Images/covidIcon/covid.png";
 const Navbar = () => {
     return (
         <div>
@@ -37,6 +38,11 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/contact">Contact Us</Link>
+                            </li>
+                            <li className="nav-item ml-3">
+                               <Link className="nav-link circle pulse covid-bg" to="/covid">
+                                   <img style={{maxWidth: "25px"}} src={covid} alt="" />
+                               </Link>
                             </li>
                         </ul>
                     </div>
