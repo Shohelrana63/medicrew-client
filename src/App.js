@@ -16,6 +16,7 @@ import PatientPrescription from './Pages/Dashboard/PatientPrescription';
 import Payment from './Components/Payment/Payment';
 import Contacts from './Pages/Contacts';
 import Covid from './Pages/Covid';
+import AboutUs from './Pages/AboutUs';
 
 export const DataContext = createContext();
 export const CalenderContext = createContext();
@@ -82,6 +83,9 @@ console.log("allAppointments",allDoctors);
             </Route>
             <Route path="/contact">
               <Contacts/>
+            </Route>
+            <Route path="/about">
+              <AboutUs/>
             </Route>
             <Route path="/covid">
               <Covid/>
