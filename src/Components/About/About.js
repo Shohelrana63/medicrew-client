@@ -7,6 +7,7 @@ import emergency from "../../Images/serviceIcon/emergency.png";
 import blood from "../../Images/serviceIcon/blood.png";
 import hours from "../../Images/serviceIcon/24hours.png";
 import counceling from "../../Images/serviceIcon/counceling.png";
+import check from "../../Images/serviceIcon/check.png";
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -46,14 +47,16 @@ const About = () => {
             <div className="choose py-3 my-5">
                  <div className="row mt-5">
                     <div className="col-md-6 my-5">
-                       <img src={choose} alt="" width="100%" />
+                       <img src={choose} style={{marginTop:"30px"}} alt="" width="100%" />
                     </div>
                     <div className="col-md-6 my-5">
-                        <h2 className="text-primary heading-text">Why choose us</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nemo eius ab ipsam accusamus eum iusto impedit quo quisquam minus!
-                         <br />  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos maiores repudiandae officiis voluptas quis distinctio fugit esse nulla perferendis? Expedita, minima neque earum quas dolorem quisquam asperiores vero eligendi tempora?
-                         <br />  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos maiores repudiandae officiis voluptas quis distinctio fugit esse nulla perferendis? Expedita, minima neque earum quas dolorem quisquam asperiores vero eligendi tempora?
-                       </p>
+                        <h2 className="text-primary heading-text">Why Medicrew</h2>
+                        <p> <span><img src={check} width="20" alt="" /></span> Because we’re easy to work with. We take the work seriously, but not ourselves. We’re not prickly, precious or pretentious.
+                           <br /> <br /> <span><img src={check} width="20" alt="" /></span> After getting a consultation, patients can review our doctors & service in our review section.
+                           <br /><br /> <span><img src={check} width="20" alt="" /></span> Single Page Application (SPA). A single-page application works in the browser and requires no page reloads and no extra time for waiting.
+                           <br /><br /> <span><img src={check} width="20" alt="" /></span> We think providing exceptional customer service is our USP, our main strength.
+                           <br /> <br /> <span><img src={check} width="20" alt="" /></span> We deliver Online Doctor's Consultation that are high quality, technically advanced & high performance.
+                           </p>
                     </div>
                  </div>
             </div>

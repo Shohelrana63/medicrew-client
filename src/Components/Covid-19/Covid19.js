@@ -12,7 +12,7 @@ const Covid19 = () => {
                 <div className="section-header">
                     <div className="covid-update">
                     <h2 className="style-color text-center heading-text">
-                    COVID-19 <br /> ALL UPDATE
+                    COVID-19 <br /> <span style={{color: '#3a4256'}}>ALL UPDATE</span> 
                     </h2>
                          <div className="row py-5 text-center">
                              <div className=" col-md-3 mt-2">
@@ -42,8 +42,8 @@ const Covid19 = () => {
                          </div>
                     </div>
                     <h5 className="text-primary text-center heading-text text-uppercase mt-5">How To Protect Yourself</h5>
-                    <h2 className="style-color text-center heading-text">
-                    Stay Safe From The Coronavirus.
+                    <h2 style={{color: '#3a4256'}} className="text-center">
+                    Stay Safe From The Coronavirus
                     </h2>
                     <div className="row mt-5">
                     {

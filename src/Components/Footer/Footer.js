@@ -50,12 +50,13 @@ const Footer = () => {
                         </ul>
                         <div className="mt-5">
                             <h6>Call now</h6>
-                            <button className="btn btn-primary">+8801704690563</button>
+                            <button className="btn btn-primary">+880 1704690563</button>
+                            <button className="btn btn-primary mt-2">+880 1303815116</button>
                         </div>
                     </FooterCol>
                 </div>
                 <div className="copyRight text-center mt-5">
-                    <h5 className="text-primary font-weight-bold pb-3">Copyright @Medicrew {(new Date()).getFullYear()} All Rights Reserved</h5>
+                    <p className="text-primary  pb-3">Copyright @Medicrew {(new Date()).getFullYear()} All Rights Reserved</p>
                 </div>
             </div>
         </section>
