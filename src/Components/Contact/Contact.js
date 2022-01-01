@@ -2,8 +2,24 @@ import React from 'react';
 import address from "../../Images/icon/address.png";
 import phone from "../../Images/icon/phone.png";
 import email from "../../Images/icon/email.png";
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
+    function sendEmail(e) {
+        e.preventDefault();
+
+        emailjs.sendForm('service_4lb5ahk', 'template_d5qg0l4', e.target, 'user_QmQR5yHlyKi9kaOT60TwB')
+            .then((result) => {
+                alert('Thank you! Your Message Send Successfully');
+                document.getElementById('name').value = "";
+                document.getElementById('email').value = "";
+                document.getElementById('phone').value = "";
+                document.getElementById('message').value = "";
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    }
     return (
         <div className="Contact">  
         <div className="container py-5">
@@ -33,18 +49,18 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="col-md-7 mt-md-0 mt-5">
-                    <form action="">
+                    <form action="" onSubmit={sendEmail}>
                         <div className="form-group">
-                            <input type="text" placeholder="Name" name="name" className="form-control p-4"/>
+                            <input type="text" id="name" placeholder="Name" name="name" className="form-control p-4" required/>
                         </div>
                         <div className="form-group">
-                            <input type="email" placeholder="Email" name="email" className="form-control p-4"/>
+                            <input type="email" id="email" placeholder="Email" name="email" className="form-control p-4" required/>
                         </div>
                         <div className="form-group">
-                            <input type="phone" placeholder="Phone No." name="phone" className="form-control p-4"/>
+                            <input type="phone" id="phone" placeholder="Phone No." name="phone" className="form-control p-4" required/>
                         </div>
                         <div className="form-group">
-                            <textarea className="form-control p-4" rows="4" placeholder="Message" name="message"></textarea>
+                            <textarea className="form-control p-4" rows="4" placeholder="Message" id="message" name="message" required></textarea>
                         </div>
                         <input type="submit" className="btn btn-style btn-block py-3" value="SEND"/>
                     </form>

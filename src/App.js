@@ -38,7 +38,7 @@ function App() {
   const [ date, setDate ] = useState(new Date());
   useEffect(
 		() => {
-			fetch('http://localhost:8000/bookedAppointments')
+			fetch('https://quiet-reaches-13499.herokuapp.com/bookedAppointments')
 				.then((res) => res.json())
 				.then((data) => 
         setAllBookedAppointments(data));
@@ -49,7 +49,7 @@ function App() {
   // Load all Doctors Information
 	useEffect(
 		() => {
-			fetch('http://localhost:8000/doctors')
+			fetch('https://quiet-reaches-13499.herokuapp.com/doctors')
 				.then((res) => res.json())
 				.then((data) => {
           setAllDoctors(data);

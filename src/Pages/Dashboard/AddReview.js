@@ -33,7 +33,7 @@ const AddReview = () => {
 
 	const handleReviewSubmit = (event) => {
 		event.preventDefault();
-		fetch('http://localhost:8000/addReview', {
+		fetch('https://quiet-reaches-13499.herokuapp.com/addReview', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(newReview)

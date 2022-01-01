@@ -9,6 +9,7 @@ import hours from "../../Images/serviceIcon/24hours.png";
 import counceling from "../../Images/serviceIcon/counceling.png";
 import check from "../../Images/serviceIcon/check.png";
 import shop from "../../Images/serviceIcon/cart.png";
+import team from "../../Images/serviceIcon/members.jpg";
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -99,6 +100,9 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="team text-center mt-5 py-3">
+                <img width="50%" src={team} alt="" />
             </div>
         </section>
     );

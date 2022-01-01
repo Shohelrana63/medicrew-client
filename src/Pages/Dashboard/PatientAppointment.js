@@ -13,7 +13,7 @@ const PatientAppointment = () => {
 		console.log("date", date)
         setSelectedDate(date)
        
-        fetch('http://localhost:8000/appointmentsByDate',{
+        fetch('https://quiet-reaches-13499.herokuapp.com/appointmentsByDate',{
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify({date})

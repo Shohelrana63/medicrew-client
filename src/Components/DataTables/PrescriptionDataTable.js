@@ -46,7 +46,7 @@ console.log(ContextData)
 
 		// Storing Data to Database
 
-		fetch('http://localhost:8000/updateDisease', {
+		fetch('https://quiet-reaches-13499.herokuapp.com/updateDisease', {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json'
