@@ -18,6 +18,7 @@ import Contacts from './Pages/Contacts';
 import Covid from './Pages/Covid';
 import AboutUs from './Pages/AboutUs';
 import MediShops from './Pages/MediShops';
+import NotFound from './Pages/NotFound';
 
 export const DataContext = createContext();
 export const CalenderContext = createContext();
@@ -121,6 +122,9 @@ console.log("allAppointments",allDoctors);
             <PrivateRoute path="/dashboard/payment">
               <Payment/>
             </PrivateRoute>
+            <Route path="*">
+							<NotFound />
+						</Route>
           </Switch>
         </Router>
         </CalenderContext.Provider>
