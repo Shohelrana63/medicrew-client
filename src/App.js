@@ -27,8 +27,8 @@ function App() {
   const [ allBookedAppointments, setAllBookedAppointments ] = useState([]);
   const [ allDoctors, setAllDoctors ] = useState([]);
   const[admin, setAdmin] = useState({
-    email: 'ad@gmail.com',
-    password: 'ad12345'
+    email: 'medicrewAdmin@gmail.com',
+    password: 'medicrew12345'
   });
   const[formAdmin, setFormAdmin] = useState({
     email:"",
@@ -101,9 +101,6 @@ console.log("allAppointments",allDoctors);
             <PrivateRoute path="/dashboard/dashboard">
                <Dashboard />
             </PrivateRoute>
-            <PrivateRoute path="/dashboard/my-appointment">
-							<PatientAppointment />
-						</PrivateRoute>
             <PrivateRoute path="/dashboard/patients">
              <Patients />
 						</PrivateRoute>

@@ -35,15 +35,9 @@ const Sidebar = () => {
 				{userType === 'admin' ?
 					<>
 						<li>
-							<Link to="/dashboard/dashboard" className="text-white">
-								<FontAwesomeIcon icon={faGripHorizontal} /> <span>Dashboard</span>
-							</Link>
-						</li>
-						{/* <li>
-							<Link to="/dashboard/appointment" className="text-white">
-								<FontAwesomeIcon icon={faCalendar} /> <span>Appointment</span>
-							</Link>
-						</li> */}
+							<FontAwesomeIcon  className="text-white" />
+							<span className="text-white navName ml-1">Admin Dashboard</span>
+					    </li>
 						<li>
 							<Link to="/dashboard/patients" className="text-white">
 								<FontAwesomeIcon icon={faUsers} /> <span>Patients</span>
@@ -62,16 +56,10 @@ const Sidebar = () => {
 					</>
 					:
 					<>
-						{/* <li>
-							<Link to="/dashboard/dashboard" className="text-white">
-								<FontAwesomeIcon icon={faGripHorizontal} /> <span>Dashboard</span>
-							</Link>
-						</li> */}
-						<li>
-							<Link to="/dashboard/my-appointment" className="text-white">
-								<FontAwesomeIcon icon={faCalendar} /> <span>My Appointment</span>
-							</Link>
-						</li>
+					<li>
+							<FontAwesomeIcon  className="text-white" />
+							<span className="text-white navName ml-1">Patients Dashboard</span>
+					    </li>
 						<li>
 							<Link to="/dashboard/my-prescriptions" className="text-white">
 								<FontAwesomeIcon icon={faFileAlt} /> <span>My Prescriptions</span>

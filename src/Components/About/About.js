@@ -8,6 +8,7 @@ import blood from "../../Images/serviceIcon/blood.png";
 import hours from "../../Images/serviceIcon/24hours.png";
 import counceling from "../../Images/serviceIcon/counceling.png";
 import check from "../../Images/serviceIcon/check.png";
+import shop from "../../Images/serviceIcon/cart.png";
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -89,6 +90,11 @@ const About = () => {
                         <div className="col-md-4 mt-5">
                             <img src={counceling} alt="" />
                             <h5 className="text-primary style-color mt-2">MEDICAL COUNSELING</h5>
+                            <p class="text-secondary">Lorem ipsum dolor sit amet, consectet commodi sit veniam adipisicing.</p>
+                        </div>
+                        <div className="col-md-4 mt-5">
+                            <img src={shop} alt="" />
+                            <h5 className="text-primary style-color mt-2">Exclusive Medishop</h5>
                             <p class="text-secondary">Lorem ipsum dolor sit amet, consectet commodi sit veniam adipisicing.</p>
                         </div>
                     </div>

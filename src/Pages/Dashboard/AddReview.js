@@ -8,7 +8,7 @@ const AddReview = () => {
     const ContextData = useContext(DataContext);
 	const patientPhoto = ContextData.loggedInUser.photoURL
 		? ContextData.loggedInUser.photoURL
-		: 'https://i.imgur.com/Kdo9X2a.jpg';
+		: 'https://imgur.com/UYSX4yH.png';
     console.log(patientPhoto);
 
 	const [ newReview, SetNewReview ] = useState({
