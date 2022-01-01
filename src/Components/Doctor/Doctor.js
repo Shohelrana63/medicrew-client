@@ -4,8 +4,8 @@ import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../Doctors/Doctors.css';
 
-const Doctor = ({ doctorsData }) => {
-    const { img, category, name, education, designation, department, hospital } = doctorsData;
+const Doctor = ({ doctorData }) => {
+    const { img, category, name, education, designation, department, hospital } = doctorData;
     const [descriptionCollapse, setDescriptionCollapse] = useState(false);
     const showMore = () => {
         setDescriptionCollapse(true);

@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import doctors from '../../Data/doctors';
 import SwiperCore, { A11y, Autoplay, Navigation, Pagination, Scrollbar, Virtual } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 import Doctor from '../Doctor/Doctor';
 import './Doctors.css';
+import { DataContext } from '../../App';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay, Virtual]);
 const Doctors = () => {
-    const doctorsData = doctors;
-
+    // const doctorsData = doctors;
+    const doctorsData = useContext(DataContext)
+    console.log("d",doctorsData.allDoctors)
     return (
         <div className="doctors">
             <div className="container my-5">
@@ -21,12 +23,14 @@ const Doctors = () => {
                         centeredslide="true"
                         navigation
                         autoplay={true}
-                        key={doctorsData && doctorsData.length}
+                        key={doctorsData.allDoctors && doctorsData.allDoctors.length}
                     >
-                        {doctorsData &&
-                            doctorsData.map((doctorsData, index) => (
+                        {doctorsData.allDoctors &&
+                            doctorsData.allDoctors.map((doctorData, index) => (
+                                
                                 <SwiperSlide key={index}>
-                                    <Doctor key={doctorsData.id} doctorsData={doctorsData} />
+                                    {console.log("data",doctorData)}
+                                    <Doctor key={doctorData.id} doctorData={doctorData} />
                                 </SwiperSlide>
                             ))}
                     </Swiper>
