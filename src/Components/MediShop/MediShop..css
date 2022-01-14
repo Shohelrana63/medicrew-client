@@ -24,9 +24,7 @@
   font-size: 14px;
   letter-spacing: 0.01rem;
 }
-.swiper-button-prev {
-  right: 120px !important;
-}
+
 .swiper-button-prev,
 .swiper-button-next {
   top: 200px !important;

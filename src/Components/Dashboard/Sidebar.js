@@ -56,7 +56,7 @@ const Sidebar = () => {
 					</>
 					:
 					<>
-					<li>
+						<li>
 							<FontAwesomeIcon  className="text-white" />
 							<span className="text-white navName ml-1">Patients Dashboard</span>
 					    </li>
